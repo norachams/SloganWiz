@@ -1,8 +1,8 @@
 import streamlit as st
 import cohere
+import config
 
-
-co = cohere.Client('h9Yx8Ps7atmmWiGydAZ9TNNMgnWyVzo45vddaF2x')
+co = cohere.Client(config.api_key)
 
 
 def create_gift(co, prompt):
@@ -19,7 +19,7 @@ def create_gift(co, prompt):
 
 def main():
     st.set_page_config(page_title="PRESENT TIME", page_icon="👋")
-    co = cohere.Client('h9Yx8Ps7atmmWiGydAZ9TNNMgnWyVzo45vddaF2x')
+    co = cohere.Client(config.api_key)
     prompt = """Generate a catchy slogan for a company named "[Company Name]" that specializes in 
     [Description of What the Company Does or Sells]. 
     The slogan should be memorable and reflect the essence or unique selling point of the company's products or services.
